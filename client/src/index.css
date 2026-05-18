@@ -1,0 +1,518 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   叁翼数字科技 — 设计系统
+   Design Movement: 低空经济数字孪生平台 × 未来主义极简科技
+   Color: 深空黑 #050816 | 科技蓝 #1677ff | 电光青 #00d4ff
+   Typography: Orbitron (英文) + Noto Sans SC (中文)
+   ============================================================ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+  /* 深色科技主题 */
+  --background: oklch(0.06 0.02 265);
+  --foreground: oklch(0.95 0.01 210);
+  --card: oklch(0.09 0.025 265);
+  --card-foreground: oklch(0.95 0.01 210);
+  --popover: oklch(0.09 0.025 265);
+  --popover-foreground: oklch(0.95 0.01 210);
+  --primary: oklch(0.58 0.22 250);
+  --primary-foreground: oklch(0.98 0.005 210);
+  --secondary: oklch(0.12 0.03 265);
+  --secondary-foreground: oklch(0.85 0.02 210);
+  --muted: oklch(0.14 0.025 265);
+  --muted-foreground: oklch(0.6 0.03 250);
+  --accent: oklch(0.68 0.22 200);
+  --accent-foreground: oklch(0.06 0.02 265);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.58 0.22 250);
+  --chart-1: oklch(0.68 0.22 200);
+  --chart-2: oklch(0.58 0.22 250);
+  --chart-3: oklch(0.65 0.2 270);
+  --chart-4: oklch(0.72 0.18 230);
+  --chart-5: oklch(0.55 0.25 280);
+  --sidebar: oklch(0.07 0.02 265);
+  --sidebar-foreground: oklch(0.85 0.02 210);
+  --sidebar-primary: oklch(0.58 0.22 250);
+  --sidebar-primary-foreground: oklch(0.98 0.005 210);
+  --sidebar-accent: oklch(0.12 0.03 265);
+  --sidebar-accent-foreground: oklch(0.85 0.02 210);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.58 0.22 250);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background-color: #050816;
+    color: #e8f4ff;
+    overflow-x: hidden;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* ========== 科技网格背景 ========== */
+  .tech-grid-bg {
+    background-image:
+      linear-gradient(rgba(22, 119, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(22, 119, 255, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* ========== 玻璃拟态卡片 ========== */
+  .glass-card {
+    background: rgba(8, 20, 50, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(22, 119, 255, 0.2);
+    border-radius: 12px;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .glass-card:hover {
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 30px rgba(22, 119, 255, 0.25), 0 0 60px rgba(0, 212, 255, 0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+    transform: translateY(-4px);
+  }
+
+  /* ========== 科技蓝发光按钮 ========== */
+  .btn-tech-primary {
+    background: linear-gradient(135deg, #1677ff, #0ea5e9);
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-tech-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .btn-tech-primary:hover {
+    box-shadow: 0 0 20px rgba(22, 119, 255, 0.6), 0 0 40px rgba(0, 212, 255, 0.3);
+    transform: translateY(-2px) scale(1.02);
+  }
+  .btn-tech-primary:hover::before { opacity: 1; }
+  .btn-tech-primary:active { transform: scale(0.97); }
+
+  .btn-tech-outline {
+    background: transparent;
+    border: 1px solid rgba(22, 119, 255, 0.6);
+    color: #00d4ff;
+    padding: 12px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .btn-tech-outline:hover {
+    background: rgba(22, 119, 255, 0.1);
+    border-color: #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    transform: translateY(-2px);
+  }
+  .btn-tech-outline:active { transform: scale(0.97); }
+
+  /* ========== 光效线条 ========== */
+  .glow-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #1677ff, #00d4ff, transparent);
+    opacity: 0.6;
+  }
+
+  /* ========== HUD角标装饰 ========== */
+  .hud-corner {
+    position: relative;
+  }
+  .hud-corner::before,
+  .hud-corner::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: #00d4ff;
+    border-style: solid;
+    opacity: 0.7;
+  }
+  .hud-corner::before {
+    top: 0; left: 0;
+    border-width: 2px 0 0 2px;
+  }
+  .hud-corner::after {
+    bottom: 0; right: 0;
+    border-width: 0 2px 2px 0;
+  }
+
+  /* ========== 发光文字 ========== */
+  .text-glow-blue {
+    color: #00d4ff;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.4);
+  }
+  .text-glow-primary {
+    color: #1677ff;
+    text-shadow: 0 0 20px rgba(22, 119, 255, 0.6);
+  }
+
+  /* ========== 渐变文字 ========== */
+  .gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 50%, #1677ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-blue {
+    background: linear-gradient(135deg, #00d4ff, #1677ff, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ========== 科技标签 ========== */
+  .tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: rgba(22, 119, 255, 0.1);
+    border: 1px solid rgba(22, 119, 255, 0.3);
+    border-radius: 100px;
+    font-size: 12px;
+    color: #00d4ff;
+    letter-spacing: 0.08em;
+  }
+  .tech-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00d4ff;
+    box-shadow: 0 0 8px #00d4ff;
+    animation: pulse-dot 2s infinite;
+  }
+
+  /* ========== 数据统计数字 ========== */
+  .stat-number {
+    font-family: 'Orbitron', 'Rajdhani', monospace;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ========== 导航栏 ========== */
+  .nav-glass {
+    background: rgba(5, 8, 22, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(22, 119, 255, 0.15);
+  }
+
+  /* ========== 区块标题样式 ========== */
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #00d4ff;
+    font-family: 'Orbitron', monospace;
+  }
+
+  /* ========== 滚动进入动画 ========== */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ========== 产业场景卡片 ========== */
+  .scene-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(8, 20, 50, 0.7);
+    border: 1px solid rgba(22, 119, 255, 0.15);
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+  }
+  .scene-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(22, 119, 255, 0.08), rgba(0, 212, 255, 0.04));
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .scene-card:hover {
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 30px rgba(22, 119, 255, 0.2), 0 20px 40px rgba(0,0,0,0.4);
+    transform: translateY(-6px);
+  }
+  .scene-card:hover::before { opacity: 1; }
+
+  /* ========== 服务流程步骤 ========== */
+  .process-step {
+    position: relative;
+    padding: 24px;
+    background: rgba(8, 20, 50, 0.5);
+    border: 1px solid rgba(22, 119, 255, 0.15);
+    border-radius: 12px;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .process-step:hover {
+    border-color: rgba(22, 119, 255, 0.4);
+    background: rgba(22, 119, 255, 0.08);
+    transform: translateY(-3px);
+  }
+
+  /* ========== 风险雷达动画 ========== */
+  .radar-ring {
+    border: 1px solid rgba(22, 119, 255, 0.3);
+    border-radius: 50%;
+    animation: radar-pulse 3s ease-in-out infinite;
+  }
+
+  /* ========== 页脚 ========== */
+  .footer-tech {
+    background: rgba(3, 5, 15, 0.95);
+    border-top: 1px solid rgba(22, 119, 255, 0.15);
+  }
+}
+
+/* ========== 关键帧动画 ========== */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px #00d4ff; }
+  50% { opacity: 0.5; box-shadow: 0 0 4px #00d4ff; }
+}
+
+@keyframes radar-pulse {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+  100% { transform: scale(0.8); opacity: 0.8; }
+}
+
+@keyframes float-drone {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-12px) translateX(8px); }
+  50% { transform: translateY(-6px) translateX(-5px); }
+  75% { transform: translateY(-15px) translateX(3px); }
+}
+
+@keyframes flow-line {
+  0% { stroke-dashoffset: 1000; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(22, 119, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(22, 119, 255, 0.6), 0 0 80px rgba(0, 212, 255, 0.2); }
+}
+
+@keyframes scan-line {
+  0% { top: 0%; opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes counter-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+
+/* ========== 粒子动画 ========== */
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #00d4ff;
+  border-radius: 50%;
+  animation: particle-float linear infinite;
+}
+
+/* ========== 飞行轨迹SVG ========== */
+.flight-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: flow-line 4s linear infinite;
+}
+
+/* ========== 数据仪表盘 ========== */
+.dashboard-panel {
+  background: rgba(5, 15, 40, 0.8);
+  border: 1px solid rgba(22, 119, 255, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* ========== 进度条 ========== */
+.tech-progress {
+  height: 4px;
+  background: rgba(22, 119, 255, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.tech-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #1677ff, #00d4ff);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+  transition: width 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ========== 响应式优化 ========== */
+@media (max-width: 768px) {
+  .glass-card:hover {
+    transform: none;
+  }
+  .scene-card:hover {
+    transform: none;
+  }
+}
+
+/* ========== 滚动条样式 ========== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(22, 119, 255, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(22, 119, 255, 0.7);
+}
