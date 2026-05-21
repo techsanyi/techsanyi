@@ -3,6 +3,7 @@
    Style: 深色科技风 + 发光分隔线 + 网格背景
    ============================================================ */
 import { Link } from "wouter";
+import ShareButton from "@/components/ShareButton";
 
 const navLinks = [
   { label: "首页", href: "/" },
@@ -36,13 +37,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-8 h-8 flex-shrink-0">
-                <svg viewBox="0 0 36 36" fill="none" className="w-full h-full">
-                  <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" stroke="#1677ff" strokeWidth="1.5" fill="rgba(22,119,255,0.1)" />
-                  <path d="M18 18 L10 12 L14 18 L10 24 Z" fill="#1677ff" opacity="0.8" />
-                  <path d="M18 18 L26 12 L22 18 L26 24 Z" fill="#00d4ff" opacity="0.8" />
-                  <circle cx="18" cy="18" r="2" fill="#00d4ff" />
-                </svg>
+              <div className="relative w-9 h-9 flex-shrink-0">
+                <img
+                  src="/sanyi-logo.webp"
+                  alt="叁翼数字科技"
+                  className="w-full h-full object-contain drop-shadow-[0_0_6px_rgba(22,119,255,0.5)]"
+                />
               </div>
               <div>
                 <div className="text-white font-bold text-base" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>叁翼数字科技</div>
@@ -96,13 +96,13 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="dashboard-panel">
                 <div className="text-[#00d4ff] text-xs mb-1" style={{ fontFamily: "'Orbitron', monospace" }}>BUSINESS</div>
-                <div className="text-white/70 text-sm" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>商务合作咨询</div>
-                <div className="text-white/50 text-xs mt-1">bd@sanyitech.com</div>
+                <div className="text-white/70 text-sm" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>商务合作咋询</div>
+                <div className="text-white/50 text-xs mt-1">contact@sanyiair.com</div>
               </div>
               <div className="dashboard-panel">
-                <div className="text-[#00d4ff] text-xs mb-1" style={{ fontFamily: "'Orbitron', monospace" }}>SUPPORT</div>
-                <div className="text-white/70 text-sm" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>技术支持热线</div>
-                <div className="text-white/50 text-xs mt-1">400-888-SANYI</div>
+                <div className="text-[#00d4ff] text-xs mb-1" style={{ fontFamily: "'Orbitron', monospace" }}>ADDRESS</div>
+                <div className="text-white/70 text-sm" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>公司地址</div>
+                <div className="text-white/50 text-xs mt-1">杭州市拱墅区网谷创新中心8幢1509室</div>
               </div>
             </div>
           </div>
@@ -111,10 +111,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-white/30 text-xs" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
-            © 2024 叁翼数字科技有限公司. 保留所有权利.
+            © 2026 叁翼数字科技有限公司. 保留所有权利.
           </div>
-          <div className="flex items-center gap-6">
-            <span className="text-white/30 text-xs" style={{ fontFamily: "'Orbitron', monospace" }}>
+          <div className="flex items-center gap-4">
+            <ShareButton />
+            <span className="text-white/20 text-xs hidden md:block" style={{ fontFamily: "'Orbitron', monospace" }}>
               LOW-ALTITUDE ECONOMY PLATFORM
             </span>
             <div className="flex items-center gap-1">

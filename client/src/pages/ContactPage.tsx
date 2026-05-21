@@ -26,7 +26,7 @@ const cooperationTypes = [
 
 const contactInfo = [
   { icon: <MapPin className="w-5 h-5" />, label: "公司地址", value: "杭州市拱墅区网谷创新中心8幢1509室", color: "#1677ff" },
-  { icon: <Mail className="w-5 h-5" />, label: "商务邮箱", value: "techsanyi@163.com", color: "#6366f1" },
+  { icon: <Mail className="w-5 h-5" />, label: "商务邮箱", value: "contact@sanyiair.com", color: "#6366f1" },
 ];
 
 export default function ContactPage() {
@@ -48,8 +48,8 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.phone) {
-      toast.error("请填写姓名和联系电话");
+    if (!form.name) {
+      toast.error("请填写姓名");
       return;
     }
     setSending(true);
@@ -71,7 +71,7 @@ export default function ContactPage() {
       toast.success("提交成功！我们将在1个工作日内联系您。");
     } catch (err: any) {
       console.error("EmailJS error:", err);
-      toast.error("发送失败，请稍后重试或直接发邮件至 techsanyi@163.com");
+      toast.error("发送失败，请稍后重试或直接发邮件至 contact@sanyiair.com");
     } finally {
       setSending(false);
     }
@@ -307,33 +307,25 @@ export default function ContactPage() {
                 </div>
               ))}
 
-              {/* WeChat QR placeholder */}
+              {/* WeChat QR Code */}
               <div className="glass-card p-5">
-                <div className="section-label mb-4">WECHAT / 微信联系</div>
+                <div className="section-label mb-4">WECHAT / 微信公众号</div>
                 <div className="flex items-center gap-4">
                   <div
-                    className="w-20 h-20 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: "rgba(22,119,255,0.08)", border: "1px solid rgba(22,119,255,0.2)" }}
+                    className="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 p-1"
+                    style={{ background: "rgba(22,119,255,0.08)", border: "1px solid rgba(22,119,255,0.3)" }}
                   >
-                    {/* QR code placeholder */}
-                    <div className="w-14 h-14 grid grid-cols-7 gap-0.5">
-                      {Array.from({ length: 49 }, (_, i) => (
-                        <div
-                          key={i}
-                          className="rounded-sm"
-                          style={{
-                            background: [0,1,2,3,4,5,6,7,13,14,20,21,27,28,34,35,41,42,43,44,45,46,47,48,8,15,22,29,36,10,17,24,31,38,11,18,25,32,39].includes(i)
-                              ? "rgba(22,119,255,0.8)"
-                              : "transparent",
-                          }}
-                        />
-                      ))}
-                    </div>
+                    <img
+                      src="/qrcode-wechat.jpg"
+                      alt="叁翼科技服务平台公众号"
+                      className="w-full h-full object-contain rounded-lg"
+                      style={{ filter: "hue-rotate(200deg) saturate(1.5) brightness(0.9)" }}
+                    />
                   </div>
                   <div>
-                    <div className="text-white/70 text-sm font-medium mb-1" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>微信公众号</div>
-                    <div className="text-white/40 text-xs" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>叁翼数字科技</div>
-                    <div className="text-white/30 text-xs mt-2" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>扫码关注获取最新资讯</div>
+                    <div className="text-white/70 text-sm font-medium mb-1" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>叁翼科技服务平台</div>
+                    <div className="text-white/40 text-xs" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>微信公众号</div>
+                    <div className="text-white/30 text-xs mt-2" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>扫码关注，获取最新资讯</div>
                   </div>
                 </div>
               </div>
@@ -369,9 +361,9 @@ export default function ContactPage() {
                     <MapPin className="w-6 h-6 text-[#1677ff]" />
                   </div>
                 </div>
-                <div className="text-white font-semibold mb-1" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>叁翼数字科技总部</div>
-                <div className="text-white/40 text-sm" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>广东省深圳市南山区科技园南区</div>
-                <div className="text-[#00d4ff] text-xs mt-2" style={{ fontFamily: "'Orbitron', monospace" }}>22.5431°N  113.9348°E</div>
+                <div className="text-white font-semibold mb-1" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>杭州叁翼数字科技有限公司</div>
+                <div className="text-white/40 text-sm" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>杭州市拱墅区网谷创新中心8幢1509室</div>
+                <div className="text-[#00d4ff] text-xs mt-2" style={{ fontFamily: "'Orbitron', monospace" }}>30.3176°N  120.0865°E</div>
               </div>
             </div>
             {/* Grid overlay */}

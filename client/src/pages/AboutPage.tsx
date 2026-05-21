@@ -12,54 +12,67 @@ const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663314934225/EsaWc
 
 const team = [
   {
-    name: "张明远",
-    title: "创始人 & CEO",
-    en: "Founder & CEO",
+    name: "刘刚",
+    title: "低空经济与能源融合专家",
+    en: "Low-Altitude Economy Expert",
     bg: "from-blue-900/40 to-blue-800/20",
     border: "#1677ff",
-    avatar: "ZM",
-    desc: "前民航局空管专家，15年低空经济从业经验，主导多个国家级低空经济试点项目。",
-    tags: ["低空经济", "空域管理", "战略规划"],
+    avatar: "刘",
+    desc: "中国城商联低空委常务副主任、正高级工程师，主导低空空域管理与产业规范制定，创新将雷达探测、量子通信应用于CNS体系。",
+    tags: ["行业标准制定", "雷达技术", "产业落地"],
   },
   {
-    name: "李思远",
-    title: "联合创始人 & CTO",
-    en: "Co-founder & CTO",
+    name: "孙本成",
+    title: "无人机飞行与培训体系专家",
+    en: "UAV Flight & Training Expert",
     bg: "from-cyan-900/40 to-cyan-800/20",
     border: "#00d4ff",
-    avatar: "LS",
-    desc: "前大疆创新技术总监，无人机系统架构专家，拥有30余项无人机相关专利。",
-    tags: ["无人机技术", "AI系统", "平台架构"],
+    avatar: "孙",
+    desc: "近20年无人机领域实战经验，CAAC认证驾驶员，精通多旋翼及固定翼操控，主导无人机职业技能培训体系建设，长期保持教学安全零事故记录。",
+    tags: ["实战飞行专家", "培训体系构建", "CAAC认证"],
   },
   {
-    name: "王晓峰",
-    title: "首席运营官 COO",
-    en: "Chief Operating Officer",
+    name: "李瑶玉",
+    title: "国际保险与风险管理专家",
+    en: "International Insurance Expert",
     bg: "from-purple-900/40 to-purple-800/20",
     border: "#6366f1",
-    avatar: "WX",
-    desc: "连续创业者，曾主导多家科技公司从0到1的运营体系建设，擅长规模化运营管理。",
-    tags: ["运营管理", "商业模式", "生态建设"],
+    avatar: "李",
+    desc: "传播学硕士，具备海外研学背景，深耕保险与风险管理领域，深度服务中国能建、中国铁建、中石化等大型建业客户，具备成熟的跨境风险管理能力。",
+    tags: ["国际业务专家", "风险管理", "建业客户服务"],
   },
   {
-    name: "陈雨薇",
-    title: "首席风控官 CRO",
-    en: "Chief Risk Officer",
+    name: "王润物",
+    title: "首席保险官",
+    en: "Chief Insurance Officer",
     bg: "from-green-900/40 to-green-800/20",
     border: "#22c55e",
-    avatar: "CY",
-    desc: "前平安保险科技部总监，专注无人机保险产品设计与风险定价，推动低空保险标准化。",
-    tags: ["风险管理", "保险科技", "AI风控"],
+    avatar: "王",
+    desc: "深耕保险行业多年，具备丰富的查勘、定损及公估经验，精通保险责任界定、事故机理及损失评估，为低空经济保险业务构建科学、高效的风险管理体系。",
+    tags: ["保险行业专家", "理赔定损权威", "风险管理"],
+  },
+  {
+    name: "袁星光",
+    title: "首席运营官",
+    en: "Chief Operating Officer",
+    bg: "from-orange-900/40 to-orange-800/20",
+    border: "#f59e0b",
+    avatar: "袁",
+    desc: "保险行业高管背景，具备从分公司到总部的完整管理经验，精通保险、金融业务全流程运营管理，擅长将保险、科技与金融进行深度融合。",
+    tags: ["保险行业高管", "全流程运营", "产业融合"],
+  },
+  {
+    name: "闫文亮",
+    title: "首席技术官",
+    en: "Chief Technology Officer",
+    bg: "from-pink-900/40 to-pink-800/20",
+    border: "#ec4899",
+    avatar: "闵",
+    desc: "资深机械工程与人工智能应用专家，具备汽车工程背景，精通对车辆及飞行器等复杂系统的结构原理与风险机理分析，是低空经济保险科技平台的核心技术引擎。",
+    tags: ["机械工程专家", "AI应用实践者", "科技平台架构师"],
   },
 ];
 
-const milestones = [
-  { year: "2021", title: "公司成立", desc: "叁翼数字科技在深圳正式注册成立，获天使轮融资" },
-  { year: "2022", title: "平台上线", desc: "低空经济综合服务平台V1.0正式上线，首批50家运营商接入" },
-  { year: "2023", title: "战略扩张", desc: "完成A轮融资，业务覆盖全国15个省市，合作运营商突破200家" },
-  { year: "2024", title: "生态构建", desc: "发布低空经济生态联盟，携手100+合作伙伴共建产业生态" },
-  { year: "2025", title: "国际布局", desc: "启动东南亚市场布局，低空走出去战略正式落地" },
-];
 
 const values = [
   {
@@ -72,7 +85,7 @@ const values = [
     icon: <Eye className="w-6 h-6" />,
     title: "愿景",
     color: "#00d4ff",
-    desc: "成为中国最具影响力的低空经济综合服务平台",
+    desc: "成为中国最具影响力的低空经济综合服务保障平台",
   },
   {
     icon: <Zap className="w-6 h-6" />,
@@ -112,7 +125,7 @@ export default function AboutPage() {
               关于叁翼
             </h1>
             <p className="text-white/60 text-lg leading-relaxed" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
-              叁翼数字科技是一家专注于低空经济产业的综合服务平台公司，致力于构建集产业应用、运营服务、风险保障于一体的低空经济生态体系，以数字化、平台化、生态化的方式赋能低空经济高质量发展。
+              叁翼数字科技是一家专注于低空经济产业的综合服务保障平台公司，致力于构建集产业应用、运营服务、风险保障于一体的低空经济生态体系，以数字化、平台化、生态化的方式赋能低空经济高质量发展。
             </p>
           </div>
         </div>
@@ -130,7 +143,7 @@ export default function AboutPage() {
                 公司定位
               </h2>
               <p className="text-white/50 leading-relaxed mb-6" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
-                叁翼科技定位为中国低空经济产业的数字基础设施提供商，通过自主研发的低空经济综合服务平台，连接政府、运营商、用户、保险机构等各方参与者，构建开放共赢的低空经济产业生态。
+                叁翼科技定位为中国低空经济产业的数字基础设施提供商，通过自主研发的低空经济综合服务保障平台，连接政府、运营商、用户、保险机构等各方参与者，构建开放共赢的低空经济产业生态。
               </p>
               <p className="text-white/50 leading-relaxed mb-8" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
                 公司名称"叁翼"寓意产业应用、运营服务、风险保障三翼并举，如同无人机的三轴稳定系统，共同支撑低空经济的稳健飞翔。
@@ -162,50 +175,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ========== MILESTONES ========== */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="glow-line absolute top-0 w-full" />
-        <div className="absolute inset-0" style={{ background: "rgba(22,119,255,0.02)" }} />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 fade-in-up">
-            <div className="section-label mb-4">DEVELOPMENT MILESTONES</div>
-            <h2 className="text-3xl font-black text-white" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
-              发展历程
-            </h2>
-          </div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-500/30 to-transparent" />
-
-            <div className="space-y-8">
-              {milestones.map((m, i) => (
-                <div
-                  key={m.year}
-                  className={`relative flex items-center gap-8 fade-in-up ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
-                  style={{ transitionDelay: `${i * 100}ms` }}
-                >
-                  <div className={`flex-1 ${i % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
-                    <div className="glass-card p-6 inline-block w-full lg:max-w-sm">
-                      <div className="text-[#00d4ff] text-xs mb-2" style={{ fontFamily: "'Orbitron', monospace" }}>{m.year}</div>
-                      <h4 className="text-white font-bold text-lg mb-2" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>{m.title}</h4>
-                      <p className="text-white/50 text-sm" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>{m.desc}</p>
-                    </div>
-                  </div>
-
-                  {/* Center dot */}
-                  <div className="hidden lg:flex w-4 h-4 rounded-full border-2 border-[#1677ff] bg-[#050816] flex-shrink-0 relative z-10 items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-[#1677ff]" />
-                  </div>
-
-                  <div className="flex-1 hidden lg:block" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ========== TEAM ========== */}
       <section className="relative py-20 overflow-hidden">
@@ -220,53 +190,50 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {team.map((member, i) => (
               <div
                 key={member.name}
-                className="glass-card p-6 text-center fade-in-up group"
+                className="glass-card p-6 fade-in-up group"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                {/* Avatar */}
-                <div className="relative mx-auto mb-5 w-20 h-20">
+                {/* Name & Title */}
+                <div className="mb-4">
                   <div
-                    className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-black bg-gradient-to-br"
-                    style={{
-                      background: `linear-gradient(135deg, ${member.border}20, ${member.border}08)`,
-                      border: `2px solid ${member.border}40`,
-                      color: member.border,
-                      fontFamily: "'Orbitron', monospace",
-                    }}
+                    className="text-[10px] tracking-widest mb-2"
+                    style={{ color: member.border, fontFamily: "'Orbitron', monospace" }}
                   >
-                    {member.avatar}
+                    {member.en}
                   </div>
+                  <h4 className="text-white font-bold text-xl mb-1" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
+                    {member.name}
+                  </h4>
                   <div
-                    className="absolute -inset-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-                    style={{ boxShadow: `0 0 20px ${member.border}40` }}
-                  />
+                    className="text-sm font-medium"
+                    style={{ color: member.border, fontFamily: "'Noto Sans SC', sans-serif" }}
+                  >
+                    {member.title}
+                  </div>
                 </div>
 
-                <h4 className="text-white font-bold text-lg mb-1" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
-                  {member.name}
-                </h4>
-                <div className="text-xs mb-1" style={{ color: member.border, fontFamily: "'Noto Sans SC', sans-serif" }}>
-                  {member.title}
-                </div>
-                <div className="text-white/20 text-[10px] mb-4" style={{ fontFamily: "'Orbitron', monospace" }}>
-                  {member.en}
-                </div>
-                <p className="text-white/40 text-xs leading-relaxed mb-4" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
+                {/* Divider */}
+                <div
+                  className="w-8 h-px mb-4"
+                  style={{ background: `linear-gradient(90deg, ${member.border}60, transparent)` }}
+                />
+
+                <p className="text-white/40 text-sm leading-relaxed mb-4" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
                   {member.desc}
                 </p>
-                <div className="flex flex-wrap justify-center gap-1.5">
+                <div className="flex flex-wrap gap-1.5">
                   {member.tags.map((tag) => (
                     <span
                       key={tag}
                       className="px-2 py-0.5 text-[10px] rounded"
                       style={{
                         background: `${member.border}10`,
-                        border: `1px solid ${member.border}20`,
-                        color: `${member.border}aa`,
+                        border: `1px solid ${member.border}25`,
+                        color: `${member.border}cc`,
                         fontFamily: "'Noto Sans SC', sans-serif",
                       }}
                     >

@@ -5,6 +5,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronRight } from "lucide-react";
+import ShareButton from "@/components/ShareButton";
 
 const navItems = [
   { label: "首页", href: "/" },
@@ -42,28 +43,14 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/">
               <div className="flex items-center gap-3 group cursor-pointer">
-                {/* Logo Icon */}
-                <div className="relative w-9 h-9 flex-shrink-0">
-                  <svg viewBox="0 0 36 36" fill="none" className="w-full h-full">
-                    <polygon
-                      points="18,2 34,10 34,26 18,34 2,26 2,10"
-                      stroke="#1677ff"
-                      strokeWidth="1.5"
-                      fill="rgba(22,119,255,0.1)"
-                    />
-                    <polygon
-                      points="18,8 28,13 28,23 18,28 8,23 8,13"
-                      stroke="#00d4ff"
-                      strokeWidth="1"
-                      fill="rgba(0,212,255,0.05)"
-                    />
-                    {/* Wing shapes */}
-                    <path d="M18 18 L10 12 L14 18 L10 24 Z" fill="#1677ff" opacity="0.8" />
-                    <path d="M18 18 L26 12 L22 18 L26 24 Z" fill="#00d4ff" opacity="0.8" />
-                    <path d="M18 18 L18 8 L21 18 L18 28 Z" fill="white" opacity="0.6" />
-                    <circle cx="18" cy="18" r="2" fill="#00d4ff" />
-                  </svg>
-                  <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-md group-hover:bg-blue-500/40 transition-all duration-300" />
+                {/* Logo Image */}
+                <div className="relative w-10 h-10 flex-shrink-0">
+                  <img
+                    src="/sanyi-logo.webp"
+                    alt="叁翼数字科技"
+                    className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(22,119,255,0.6)]"
+                  />
+                  <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md group-hover:bg-blue-500/25 transition-all duration-300" />
                 </div>
                 {/* Logo Text */}
                 <div>
@@ -110,8 +97,9 @@ export default function Navbar() {
               })}
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button + Share */}
             <div className="hidden lg:flex items-center gap-3">
+              <ShareButton compact />
               <Link href="/contact">
                 <button className="btn-tech-primary text-sm flex items-center gap-2">
                   申请合作
@@ -157,7 +145,11 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <div className="pt-3">
+            <div className="pt-3 space-y-2">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-white/40 text-xs" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>分享此页面</span>
+                <ShareButton />
+              </div>
               <Link href="/contact">
                 <button className="btn-tech-primary w-full text-sm">申请合作</button>
               </Link>
