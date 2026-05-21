@@ -69,7 +69,7 @@ const platforms = [
     title: "风险保障层",
     subtitle: "RISK ASSURANCE",
     desc: "构建低空保险+AI风控+全生命周期保障体系，从出险到复飞，提供端到端风险管理服务。",
-    features: ["出险服务", "查勘定损", "理赔服务", "维修恢复", "复飞保障"],
+    features: ["承保服务", "出险服务", "查勘定损", "理赔服务", "维修恢复", "复飞保障"],
     color: "#6366f1",
     href: "/risk",
   },
@@ -203,7 +203,7 @@ export default function Home() {
           <div className="max-w-3xl">
             {/* Badge */}
             <div className="tech-badge mb-8 inline-flex">
-              中国低空经济综合服务平台
+              中国低空经济综合服务保障平台
             </div>
 
             {/* Main title */}
@@ -215,7 +215,7 @@ export default function Home() {
 
             {/* Subtitle */}
             <div className="text-xl lg:text-2xl text-white/80 font-medium mb-4" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
-              叁翼科技低空经济综合服务平台
+              叁翼科技低空经济综合服务保障平台
             </div>
 
             {/* Description */}
