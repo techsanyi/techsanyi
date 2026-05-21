@@ -96,7 +96,7 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="dashboard-panel">
                 <div className="text-[#00d4ff] text-xs mb-1" style={{ fontFamily: "'Orbitron', monospace" }}>BUSINESS</div>
-                <div className="text-white/70 text-sm" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>商务合作咋询</div>
+                <div className="text-white/70 text-sm" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>商务合作咨询</div>
                 <div className="text-white/50 text-xs mt-1">contact@sanyiair.com</div>
               </div>
               <div className="dashboard-panel">
